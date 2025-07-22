@@ -2,7 +2,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ExternalLink, Github, Calendar, MapPin, ShoppingCart, MessageCircle, BookOpen } from 'lucide-react';
+import { ExternalLink, Github, Calendar, MapPin, MessageCircle, BookOpen } from 'lucide-react';
+import travelPlannerImg from '../assets/travel-planner.jpg';
+import geminiCloneImg from '../assets/gemini-clone.jpg';
+import smartLmsImg from '../assets/smart-lms.jpg';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -14,28 +17,27 @@ const Projects = () => {
       description: "Developed a responsive travel planner using React.js, allowing users to create, manage, and share custom itineraries with real-time weather and map integration.",
       icon: MapPin,
       technologies: ["React.js", "APIs", "Responsive Design"],
-      color: "from-blue-500 to-purple-600"
-    },
-    {
-      title: "E-Commerce Website",
-      description: "Built a dynamic e-commerce platform with React.js, featuring product listings, shopping cart functionality, user authentication, and secure payment integration.",
-      icon: ShoppingCart,
-      technologies: ["React.js", "Authentication", "Payment Integration"],
-      color: "from-green-500 to-teal-600"
+      color: "from-blue-500 to-purple-600",
+      github: "https://github.com/abhilash0023/Travel.com",
+      image: travelPlannerImg
     },
     {
       title: "Gemini Clone",
       description: "Developed a Gemini clone using React and Vite, replicating the core UI and user experience. Integrated the application with the Gemini API for real-time conversational functionality.",
       icon: MessageCircle,
       technologies: ["React", "Vite", "Gemini API"],
-      color: "from-orange-500 to-red-600"
+      color: "from-orange-500 to-red-600",
+      github: "https://github.com/abhilash0023/Gemini_Clone",
+      image: geminiCloneImg
     },
     {
       title: "Smart-LMS",
       description: "Built a Smart-LMS (Learning Management System) using React, Vite, Node.js, and MongoDB, providing seamless course management, user interaction, and dynamic content delivery for an efficient learning experience.",
       icon: BookOpen,
       technologies: ["React", "Vite", "Node.js", "MongoDB"],
-      color: "from-indigo-500 to-purple-600"
+      color: "from-indigo-500 to-purple-600",
+      github: "https://github.com/abhilash0023/Smart-LMS",
+      image: smartLmsImg
     }
   ];
 
@@ -80,39 +82,56 @@ const Projects = () => {
             Featured Projects
           </motion.h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <motion.div
+              <motion.a
                 key={project.title}
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
-                className="bg-gray-50 dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
-                whileHover={{ y: -5 }}
+                className="bg-gray-50 dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                whileHover={{ y: -5, scale: 1.02 }}
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${project.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <project.icon className="w-8 h-8 text-white" />
+                {/* Project Image */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <Github className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
                 </div>
-                
-                <h4 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-                  {project.title}
-                </h4>
-                
-                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300 text-sm rounded-full border border-gray-200 dark:border-gray-600"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+
+                <div className="p-6">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <project.icon className="w-6 h-6 text-white" />
+                  </div>
+                  
+                  <h4 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
+                    {project.title}
+                  </h4>
+                  
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed text-sm">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300 text-xs rounded-full border border-gray-200 dark:border-gray-600"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
