@@ -11,7 +11,7 @@ const About = () => {
   const stats = [
     { icon: GraduationCap, label: "Education", value: "B.Tech IT" },
     { icon: Award, label: "CGPA", value: "7.8*" },
-    { icon: Users, label: "Projects", value: "4+" },
+    { icon: Users, label: "Projects", value: "3" },
     { icon: Clock, label: "Experience", value: "2+ Years" },
   ];
 
