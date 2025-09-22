@@ -57,9 +57,9 @@ const Hero = () => {
             <div className="relative w-40 h-40 mx-auto mb-8">
               <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full animate-pulse"></div>
               <img
-                src="/formal-profile.jpg"
+                src="/lovable-uploads/b9a6a7bb-6024-458d-9346-4a010259d0db.png"
                 alt="Abhilash K"
-                className="relative w-full h-full object-cover object-center rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
+                className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
               />
             </div>
           </motion.div>
