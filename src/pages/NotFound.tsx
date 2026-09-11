@@ -9,6 +9,29 @@ const NotFound = () => {
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+
+    const previousTitle = document.title;
+    document.title = "Page Not Found | Abhilash K";
+
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector<HTMLMetaElement>(selector);
+      const previous = el?.getAttribute(attr) ?? null;
+      el?.setAttribute(attr, value);
+      return () => {
+        if (el && previous !== null) el.setAttribute(attr, previous);
+      };
+    };
+
+    const restore = [
+      setMeta('meta[name="description"]', "content", "This page does not exist. Head back to the Abhilash K portfolio home page."),
+      setMeta('meta[property="og:title"]', "content", "Page Not Found | Abhilash K"),
+      setMeta('meta[property="og:description"]', "content", "This page does not exist. Head back to the Abhilash K portfolio home page."),
+    ];
+
+    return () => {
+      document.title = previousTitle;
+      restore.forEach((fn) => fn());
+    };
   }, [location.pathname]);
 
   return (
