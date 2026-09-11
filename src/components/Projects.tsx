@@ -2,10 +2,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ExternalLink, Github, Calendar, MapPin, MessageCircle, BookOpen } from 'lucide-react';
+import { Github, Calendar, MapPin, MessageCircle, BookOpen, ShoppingCart, Dumbbell } from 'lucide-react';
 import travelPlannerImg from '../assets/travel-planner.jpg';
 import geminiCloneImg from '../assets/gemini-clone.jpg';
 import smartLmsImg from '../assets/smart-lms.jpg';
+import ecommerceImg from '../assets/ecommerce.jpg';
+import fitFusionImg from '../assets/fit-fusion.jpg';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -14,16 +16,25 @@ const Projects = () => {
   const projects = [
     {
       title: "Travel Itinerary Planner",
-      description: "Developed a responsive travel planner using React.js, allowing users to create, manage, and share custom itineraries with real-time weather and map integration.",
+      description: "Responsive travel itinerary planner built with React.js, letting users create, edit and manage personalised travel plans with real-time weather forecasting and interactive maps.",
       icon: MapPin,
-      technologies: ["React.js", "APIs", "Responsive Design"],
+      technologies: ["React.js", "REST APIs", "State Management"],
       color: "from-blue-500 to-purple-600",
       github: "https://github.com/abhilash0023/Travel.com",
       image: travelPlannerImg
     },
     {
+      title: "E-Commerce Website",
+      description: "Fully responsive e-commerce application with dynamic product listings, search and category filtering, cart management, order summary and secure checkout using React Router and Context API.",
+      icon: ShoppingCart,
+      technologies: ["React.js", "React Router", "Context API"],
+      color: "from-emerald-500 to-teal-600",
+      github: "https://github.com/abhilash0023",
+      image: ecommerceImg
+    },
+    {
       title: "Gemini Clone",
-      description: "Developed a Gemini clone using React and Vite, replicating the core UI and user experience. Integrated the application with the Gemini API for real-time conversational functionality.",
+      description: "AI-powered chatbot interface built with React.js and Vite, integrated with the Gemini API for real-time conversational responses, loading indicators and conversation history.",
       icon: MessageCircle,
       technologies: ["React", "Vite", "Gemini API"],
       color: "from-orange-500 to-red-600",
@@ -32,27 +43,42 @@ const Projects = () => {
     },
     {
       title: "Smart-LMS",
-      description: "Built a Smart-LMS (Learning Management System) using React, Vite, Node.js, and MongoDB, providing seamless course management, user interaction, and dynamic content delivery for an efficient learning experience.",
+      description: "Full-stack Learning Management System with secure authentication for students and admins, course management, enrolment, progress tracking and RESTful APIs.",
       icon: BookOpen,
-      technologies: ["React", "Vite", "Node.js", "MongoDB"],
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
       color: "from-indigo-500 to-purple-600",
       github: "https://github.com/abhilash0023/Smart-LMS",
       image: smartLmsImg
+    },
+    {
+      title: "Fit Fusion",
+      description: "Gym & fitness management platform with Admin, Trainer and Member dashboards, JWT auth and role-based access, UPI payments with QR generation, invoicing and 80mm thermal receipt printing.",
+      icon: Dumbbell,
+      technologies: ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
+      color: "from-rose-500 to-pink-600",
+      github: "https://github.com/abhilash0023",
+      image: fitFusionImg
     }
   ];
 
   const internships = [
     {
-      company: "AWERUM - POLLACHI",
-      role: "Front-end Development Intern",
-      duration: "24.06.24 - 09.07.24",
-      description: "Completed a 15-day front-end development internship specializing in HTML, CSS, and JavaScript. Built responsive user interfaces and improved UI/UX through clean, efficient coding practices."
+      company: "FAM Infomedia Pvt. Ltd. – Palladam, Tamil Nadu",
+      role: "Frontend Developer Intern",
+      duration: "Jan 2026 – Aug 2026",
+      description: "Built responsive, interactive interfaces with HTML, CSS, JavaScript, React.js and Bootstrap. Created reusable modular components, integrated REST APIs for dynamic data, collaborated with UI/UX designers and backend developers, and optimised apps for performance and cross-browser compatibility."
     },
     {
-      company: "NOVI TECH - COIMBATORE",
+      company: "NOVI TECH – Coimbatore",
       role: "MERN Stack Development Intern",
-      duration: "16.10.24 - 23.11.24",
-      description: "Completed a MERN Stack development internship progressing from foundational to intermediate level. Gained practical experience in building full-stack applications using MongoDB, Express.js, React.js, and Node.js."
+      duration: "Oct 2024 – Nov 2024",
+      description: "Virtual internship focused on full-stack development: built RESTful APIs for backend integration, developed responsive React interfaces, and worked with Git version control and debugging tools."
+    },
+    {
+      company: "AWERUM – Pollachi",
+      role: "Front-end Development Intern",
+      duration: "Jun 2024 – Jul 2024",
+      description: "15-day internship designing and developing responsive, user-friendly web interfaces with HTML, CSS and JavaScript. Implemented modern UI/UX practices, improved performance and cross-browser compatibility, and built navigation menus, forms and sliders."
     }
   ];
 
@@ -81,7 +107,7 @@ const Projects = () => {
           >
             Featured Projects
           </motion.h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.a
@@ -99,7 +125,10 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} project preview`}
+                    loading="lazy"
+                    width={1024}
+                    height={640}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
@@ -111,15 +140,15 @@ const Projects = () => {
                   <div className={`w-12 h-12 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <project.icon className="w-6 h-6 text-white" />
                   </div>
-                  
+
                   <h4 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
                     {project.title}
                   </h4>
-                  
+
                   <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed text-sm">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <span
@@ -146,7 +175,7 @@ const Projects = () => {
           >
             Internship Experience
           </motion.h3>
-          
+
           <div className="space-y-6">
             {internships.map((internship, index) => (
               <motion.div
