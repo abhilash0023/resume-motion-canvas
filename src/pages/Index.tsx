@@ -9,6 +9,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ThemeProvider from '../components/ThemeProvider';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -49,6 +50,7 @@ const Index = () => {
         </motion.main>
 
         <Footer />
+        <WhatsAppButton />
       </div>
     </ThemeProvider>
   );

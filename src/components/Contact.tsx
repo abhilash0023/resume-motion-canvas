@@ -2,8 +2,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import { WHATSAPP_LINK } from './WhatsAppButton';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -47,6 +48,12 @@ const Contact = () => {
       label: "Phone",
       value: "+91 9600598446",
       href: "tel:+919600598446"
+    },
+    {
+      icon: MessageCircle,
+      label: "WhatsApp",
+      value: "+91 9600598446",
+      href: WHATSAPP_LINK
     },
     {
       icon: Mail,
