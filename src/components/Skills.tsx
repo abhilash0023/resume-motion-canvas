@@ -19,7 +19,7 @@ const Skills = () => {
   ];
 
   const tooling = [
-    "Next.js",
+    "React.js",
     "REST API Integration",
     "PostgreSQL",
     "Git & GitHub",
