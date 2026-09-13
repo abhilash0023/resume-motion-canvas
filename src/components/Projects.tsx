@@ -54,7 +54,7 @@ const Projects = () => {
       title: "Fit Fusion",
       description: "Gym & fitness management platform with Admin, Trainer and Member dashboards, JWT auth and role-based access, UPI payments with QR generation, invoicing and 80mm thermal receipt printing.",
       icon: Dumbbell,
-      technologies: ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
+      technologies: ["React.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
       color: "from-rose-500 to-pink-600",
       github: "https://github.com/abhilash0023/FitFusion",
       image: fitFusionImg
