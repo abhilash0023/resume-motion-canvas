@@ -10,8 +10,8 @@ const About = () => {
 
   const stats = [
     { icon: GraduationCap, label: "Education", value: "B.Tech IT" },
-    { icon: Award, label: "CGPA", value: "7.8*" },
-    { icon: Users, label: "Projects", value: "3" },
+    { icon: Award, label: "CGPA", value: "8.1" },
+    { icon: Users, label: "Projects", value: "5" },
     { icon: Clock, label: "Experience", value: "2+ Years" },
   ];
 
@@ -38,17 +38,16 @@ const About = () => {
           >
             <div className="space-y-6 text-gray-600 dark:text-gray-300">
               <p className="text-lg leading-relaxed">
-                I'm an undergraduate student at <strong className="text-teal-600 dark:text-teal-400">Dr. Mahalingam College of Engineering and Technology</strong>, 
-                pursuing B.Tech in Information Technology with a CGPA of 7.8*.
+                I'm a <strong className="text-teal-600 dark:text-teal-400">Frontend Developer</strong> with professional experience
+                building responsive, user-centric web applications using React.js, JavaScript, HTML, CSS and Bootstrap.
               </p>
               <p className="text-lg leading-relaxed">
-                Aspiring to build a rewarding career by leveraging my technical expertise and problem-solving skills in 
-                <strong className="text-teal-600 dark:text-teal-400"> MERN stack development</strong> to drive business growth 
-                and enhance digital efficiency.
+                I'm skilled in developing reusable UI components, integrating <strong className="text-teal-600 dark:text-teal-400">REST APIs</strong>,
+                optimising application performance and delivering intuitive user experiences.
               </p>
               <p className="text-lg leading-relaxed">
-                I'm passionate about emerging web technologies, especially full-stack development in MERN stack, and 
-                collaborating within dynamic teams to deliver innovative, user-centric web applications.
+                I enjoy collaborating with cross-functional teams to deliver scalable, high-quality web solutions, and I'm continuously
+                expanding my expertise in full-stack development with the MERN stack.
               </p>
             </div>
 
@@ -63,7 +62,7 @@ const About = () => {
                 <div className="border-l-4 border-teal-500 pl-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">B.Tech Information Technology</h4>
                   <p className="text-gray-600 dark:text-gray-400">Dr. Mahalingam College of Engineering and Technology</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-500">2022 - 2026 | CGPA: 7.8*</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-500">2022 - 2026 | CGPA: 8.1</p>
                 </div>
                 <div className="border-l-4 border-blue-500 pl-4">
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Higher Secondary School</h4>

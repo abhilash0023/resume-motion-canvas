@@ -56,7 +56,7 @@ const Projects = () => {
       icon: Dumbbell,
       technologies: ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
       color: "from-rose-500 to-pink-600",
-      github: "https://github.com/abhilash0023",
+      github: "https://github.com/abhilash0023/FitFusion",
       image: fitFusionImg
     }
   ];

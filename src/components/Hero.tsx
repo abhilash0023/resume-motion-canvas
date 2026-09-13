@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
+import profileAsset from '../assets/abhilash-profile.jpg.asset.json';
 import { OrbitControls, Float } from '@react-three/drei';
 import { Suspense } from 'react';
 
@@ -57,9 +58,9 @@ const Hero = () => {
             <div className="relative w-40 h-40 mx-auto mb-8">
               <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full animate-pulse"></div>
               <img
-                src="/lovable-uploads/b9a6a7bb-6024-458d-9346-4a010259d0db.png"
-                alt="Abhilash K"
-                className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
+                src={profileAsset.url}
+                alt="Abhilash K, Frontend Developer"
+                className="relative w-full h-full object-cover object-center rounded-full border-4 border-white dark:border-gray-800 shadow-2xl"
               />
             </div>
           </motion.div>
@@ -81,7 +82,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
           >
-            Undergraduate Student & MERN Stack Developer
+            Frontend Developer | React.js & MERN Stack
           </motion.p>
 
           <motion.p
@@ -90,7 +91,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
           >
-            Passionate about building rewarding careers by leveraging technical expertise and problem-solving skills in MERN stack development to drive business growth and enhance digital efficiency.
+            Building responsive, user-centric web applications with React.js, JavaScript and Bootstrap — reusable UI components, REST API integration and performance-focused experiences.
           </motion.p>
 
           <motion.div
